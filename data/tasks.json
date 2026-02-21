@@ -1,0 +1,121 @@
+{
+  "tasks": {
+    "2026-W08|ugentlig|BA|køkken|0": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "BA",
+      "category": "køkken",
+      "index": 0,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:41.180Z"
+    },
+    "2026-W08|ugentlig|BA|køkken|2": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "BA",
+      "category": "køkken",
+      "index": 2,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:41.180Z"
+    },
+    "2026-W08|ugentlig|BA|køkken|1": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "BA",
+      "category": "køkken",
+      "index": 1,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:41.180Z"
+    },
+    "2026-W08|ugentlig|AL|overflader|1": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "AL",
+      "category": "overflader",
+      "index": 1,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:56.769Z"
+    },
+    "2026-W08|ugentlig|AL|overflader|3": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "AL",
+      "category": "overflader",
+      "index": 3,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:56.769Z"
+    },
+    "2026-W08|ugentlig|AL|overflader|2": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "AL",
+      "category": "overflader",
+      "index": 2,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:56.769Z"
+    },
+    "2026-W08|ugentlig|AL|overflader|4": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "AL",
+      "category": "overflader",
+      "index": 4,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:56.769Z"
+    },
+    "2026-W08|ugentlig|NA|badeværelse|1": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "NA",
+      "category": "badeværelse",
+      "index": 1,
+      "done": false,
+      "updatedAt": "2026-02-21T17:16:56.850Z"
+    },
+    "2026-W08|ugentlig|NA|badeværelse|0": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "NA",
+      "category": "badeværelse",
+      "index": 0,
+      "done": false,
+      "updatedAt": "2026-02-21T17:16:56.850Z"
+    },
+    "2026-W08|ugentlig|NA|badeværelse|2": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "NA",
+      "category": "badeværelse",
+      "index": 2,
+      "done": false,
+      "updatedAt": "2026-02-21T17:16:56.850Z"
+    },
+    "2026-W08|ugentlig|NA|badeværelse|3": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "NA",
+      "category": "badeværelse",
+      "index": 3,
+      "done": false,
+      "updatedAt": "2026-02-21T17:16:56.850Z"
+    },
+    "2026-W08|ugentlig|NA|badeværelse|4": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "NA",
+      "category": "badeværelse",
+      "index": 4,
+      "done": false,
+      "updatedAt": "2026-02-21T17:16:56.850Z"
+    },
+    "2026-W08|ugentlig|AL|overflader|0": {
+      "week": "2026-W08",
+      "period": "ugentlig",
+      "assignee": "AL",
+      "category": "overflader",
+      "index": 0,
+      "done": true,
+      "updatedAt": "2026-02-21T17:29:56.769Z"
+    }
+  }
+}

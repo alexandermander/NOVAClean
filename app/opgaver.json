@@ -1,0 +1,41 @@
+﻿{
+  "ugentlig": {
+    "køkken": [
+      "Alle overflader",
+      "Skifte klude",
+      "Vask i hane"
+    ],
+    "overflader": [
+      "Støvsug gulvet",
+      "Tørre borde",
+      "Tørre stole",
+      "Aftørre reol",
+      "Støvsug sofa"
+    ],
+    "badeværelse": [
+      "Vandlås i bad og vask",
+      "Haner og batteri",
+      "Vask og spejl",
+      "Fyld sæbe",
+      "Toilet"
+    ]
+  },
+  "månedlig": {
+    "køkken": [
+      "Tøm køleskabet",
+      "Rens køleskabet",
+      "Smør ovn",
+      "Afkalk alt",
+      "Afløb"
+    ],
+    "overflader": [
+      "Vask gulvet",
+      "Aftørre indersider",
+      "Plader og ovn",
+      "Vask vægge og ind i skab"
+    ],
+    "badeværelse": []
+  },
+  "personer": ["BA", "AL", "NA", "OL"],
+  "base_date": "2026-02-21"
+}

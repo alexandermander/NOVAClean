@@ -1,23 +1,20 @@
-﻿import { promises as fs } from 'node:fs'
-import path from 'node:path'
+﻿import { createClient } from 'redis'
 
-const dataFile = path.join(process.cwd(), 'data', 'tasks.json')
+let redisClient = null
 
-const readStore = async () => {
-  try {
-    const raw = await fs.readFile(dataFile, 'utf8')
-    const parsed = JSON.parse(raw)
-    if (parsed && typeof parsed === 'object' && parsed.tasks) return parsed
-  } catch {
-    // ignore
+const getRedis = async () => {
+  if (!redisClient) {
+    redisClient = createClient({ url: process.env.REDIS_URL })
+    redisClient.on('error', () => {})
   }
-  return { tasks: {} }
+  if (!redisClient.isOpen) {
+    await redisClient.connect()
+  }
+  return redisClient
 }
 
-const writeStore = async (store) => {
-  const payload = JSON.stringify(store, null, 2)
-  await fs.writeFile(dataFile, payload, 'utf8')
-}
+const toTaskId = ({ week, period, assignee, category, index }) =>
+  `${week}|${period}|${assignee}|${category}|${index}`
 
 export async function POST(request) {
   const body = await request.json()
@@ -27,23 +24,35 @@ export async function POST(request) {
     return new Response(JSON.stringify({ error: 'Invalid payload' }), { status: 400 })
   }
 
-  const store = await readStore()
   const now = new Date().toISOString()
+  const updates = {}
 
   for (const item of items) {
     const { week, period, assignee, category, index, done } = item || {}
     if (!week || !period || !assignee || !category || typeof index !== 'number' || typeof done !== 'boolean') {
       return new Response(JSON.stringify({ error: 'Invalid payload' }), { status: 400 })
     }
-    const id = `${week}|${period}|${assignee}|${category}|${index}`
-    store.tasks[id] = { week, period, assignee, category, index, done, updatedAt: now }
+    const task = { week, period, assignee, category, index, done, updatedAt: now }
+    updates[toTaskId(task)] = JSON.stringify(task)
   }
 
-  await writeStore(store)
+  const redis = await getRedis()
+  await redis.hSet('tasks', updates)
   return new Response(JSON.stringify({ ok: true, count: items.length }), { status: 200 })
 }
 
 export async function GET() {
-  const store = await readStore()
-  return new Response(JSON.stringify(store), { status: 200 })
+  const redis = await getRedis()
+  const entries = (await redis.hGetAll('tasks')) || {}
+  const tasks = {}
+
+  for (const [id, value] of Object.entries(entries)) {
+    try {
+      tasks[id] = JSON.parse(value)
+    } catch {
+      // ignore bad entries
+    }
+  }
+
+  return new Response(JSON.stringify({ tasks }), { status: 200 })
 }
